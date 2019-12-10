@@ -166,9 +166,18 @@ $A(x_1,..., x_n)$ --- произвольная формула
             $M_1 \vDash (B(a,...) \vee C(a,...)) \Leftrightarrow M_1 \vDash B$ или $M_1 \vDash C \Leftrightarrow M_2 \vDash B(h(a),...)$ или $M_2 \vDash C(h(a),...) \Leftrightarrow M_2 \vDash (B \vee C)(h(a),...)$ (аналогично доказывается для остальных операций)
             \item $A = \exists x B(x, y)$
             
-            $M_1 \vDash \exists x B(x, a) \leftrightarrow \exists b \in M_1, M_1 \vDash B(b, a) \leftrightarrow \exists b \in M_1, M_2 \vDash B(h(b), h(a)) \leftrightarrow \exists c \in M_2, M_2 \vDash B(c, h(a))$
+            $M_1 \vDash \exists x B(x, a) \leftrightarrow \exists b \in M_1, M_1 \vDash B(b, a) \leftrightarrow \exists b \in M_1, M_2 \vDash B(h(b), h(a)) \leftrightarrow \exists c \in M_2, M_2 \vDash B(c, h(a)) \leftrightarrow M_2 \vDash \exists x B(x, h(a))$ (предпоследняя эквивалентность верна именно потому, что у нас эпиморфизм), квантор всеобщности доказывается аналогично 
         \end{itemize}
     \end{enumerate}
 \end{proof}
+
+\begin{theorem}{(Элементарная эквивалентность изоморфных моделей)}
+	Если модели $M_1$ и $M_2$ изоморфны, то они элементарно эквивалентны \footnote{Для элементарной эквивалентности достаточно даже просто эпиморфизма, но мы используем более частую формулировку теоремы}
+\end{theorem}
+
+\begin{proof}
+    Рассматриваем только замкнутые формулы $A$. Из предыдущей теоремы следует, что формула $A$ схраняет свою истинность при изоморфизме, а это значит, что $M_1$ и $M_2$ будут элементарно эквивалентны по определению.
+\end{proof}
+
 
 \end{document}
